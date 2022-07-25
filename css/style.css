@@ -11,6 +11,15 @@
   --darck-background-color: #2f303a;
   --white-title-color: #fff;
   --white-btn-text-color: #fff;
+  --icon-color: #afb1b8;
+  --footer-social-icon-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+*:hover {
+  transition: 0.25s;
 }
 
 body {
@@ -96,6 +105,12 @@ img {
   color: var(--accent-site-color);
 }
 
+.section-title {
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+}
+
 /* --------Navigation-------- */
 
 .container.main-nav {
@@ -123,18 +138,17 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 }
+.contacts-icon {
+  vertical-align: middle;
+  display: inline-block;
+  fill: currentColor;
+}
 
 .nav-link:hover,
 .nav-link:focus,
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--accent-site-color);
-}
-
-.section-title {
-  font-size: 36px;
-  line-height: 1.2;
-  text-align: center;
 }
 
 .site-nav {
@@ -157,9 +171,19 @@ img {
 /* --------Hero-------- */
 
 .hero {
-  background-color: var(--darck-background-color);
   padding: 200px 0;
   text-align: center;
+
+  min-height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  background-color: var(--darck-background-color);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-title {
@@ -199,6 +223,8 @@ img {
   background-color: var(--white-btn-text-color);
   color: var(--accent-site-color);
   border: 3px solid var(--accent-site-color);
+  -webkit-transition: 0.5s ease-out;
+  transform: scale(1.05);
 }
 
 /* --------Feature-------- */
@@ -224,6 +250,17 @@ img {
 
 .feature-title {
   margin-bottom: 10px;
+}
+
+/* icon  */
+.feature-list-icon {
+  display: block;
+  height: 120px;
+  background-color: var(--primery-background-color);
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 25px;
+  margin-bottom: 30px;
 }
 
 /* --------Work-section-------- */
@@ -264,6 +301,7 @@ img {
   border-bottom-right-radius: 10px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  padding-bottom: 30px;
 }
 
 .our-team-title {
@@ -281,7 +319,64 @@ img {
   line-height: 1.2;
   text-align: center;
 
-  padding-bottom: 30px;
+  margin-bottom: 16px;
+}
+
+/* icon  */
+
+.social-icon-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-icon-item {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  padding: 12px;
+}
+
+.social-icon-item:hover .social-icon {
+  fill: var(--white-title-color);
+}
+.social-icon-item:hover {
+  fill: var(--white-title-color);
+  background-color: #2196f3;
+}
+
+.social-icon {
+  fill: var(--icon-color);
+}
+
+/* --------Our-client-------- */
+
+.our-client .title {
+  margin-bottom: 50px;
+}
+
+.our-client-list {
+  display: flex;
+  gap: 30px;
+}
+
+.our-client-item {
+  padding: 16px 32px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-basis: calc((100% - 150px) / 6);
+}
+
+.our-client-logo {
+  fill: var(--icon-color);
 }
 
 /* --------Footer-------- */
@@ -303,6 +398,12 @@ img {
 .address {
   line-height: 1.7;
   font-style: normal;
+
+  display: inline-flex;
+}
+
+.address-list {
+  margin-right: 70px;
 }
 
 .address-reset {
@@ -321,6 +422,47 @@ img {
 
 .address-item:not(:last-child) {
   margin-bottom: 9px;
+}
+
+.footer-social-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--white-title-color);
+
+  margin-bottom: 20px;
+}
+
+.footer-address-wrapper {
+  display: inline-block;
+}
+
+/* icon*/
+.footer-social-wrapper {
+  display: inline-block;
+  max-width: 206px;
+}
+
+.footer-social-wrapper .social-icon-item {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  padding: 12px;
+  background-color: var(--footer-social-icon-bg);
+}
+
+.footer-social-wrapper .social-icon-item:hover .social-icon {
+  fill: var(--white-title-color);
+}
+.footer-social-wrapper .social-icon-item:hover {
+  fill: var(--white-title-color);
+  background-color: #2196f3;
+}
+
+.footer-social-wrapper .social-icon {
+  fill: var(--white-title-color);
 }
 
 /* ------------------------------------------ */
