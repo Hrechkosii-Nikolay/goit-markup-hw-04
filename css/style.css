@@ -99,7 +99,8 @@ img {
   font-size: 26px;
   line-height: 1.2;
   color: var(--header-logo-color);
-
+}
+.header-logo {
   margin-right: 93px;
 }
 
@@ -148,13 +149,10 @@ img {
   margin-right: 10px;
 }
 
-.nav-link:hover,
-.nav-link:focus,
-.contacts-link:hover,
-.contacts-link:focus {
+.nav-link:is(:hover, :focus),
+.contacts-link:is(:hover, :focus) {
   color: var(--accent-site-color);
 }
-
 .site-nav {
   display: flex;
 }
@@ -222,11 +220,7 @@ img {
   background-color: var(--accent-site-color);
 }
 
-.hero-btn:hover,
-.hero-btn:focus {
-  background-color: var(--white-btn-text-color);
-  color: var(--accent-site-color);
-  border: 3px solid var(--accent-site-color);
+.hero-btn:is(:hover, :focus) {
   -webkit-transition: 0.5s ease-out;
   transform: scale(1.05);
 }
@@ -339,7 +333,7 @@ img {
   margin-right: 10px;
 }
 
-.social-icon-item {
+.out-team-icon-link {
   height: 44px;
   width: 44px;
   border-radius: 50%;
@@ -349,16 +343,14 @@ img {
   align-items: center;
 }
 
-.social-icon-item > a {
-  height: 20px;
-}
-
-.social-icon-item:hover .social-icon {
+.out-team-icon-link:is(:hover, :focus) .social-icon {
   fill: var(--white-title-color);
+  outline: none;
 }
-.social-icon-item:hover {
+.out-team-icon-link:is(:hover, :focus) {
   fill: var(--white-title-color);
   background-color: #2196f3;
+  outline: none;
 }
 
 .social-icon {
@@ -376,7 +368,7 @@ img {
   gap: 30px;
 }
 
-.our-client-item {
+.our-client-link {
   width: 170px;
   height: 92px;
   border: 1px solid var(--icon-color);
@@ -392,19 +384,20 @@ img {
   fill: var(--icon-color);
 }
 
-.our-client-item > a {
-  height: 60px;
-}
-.our-client-item:hover {
+.our-client-link:is(:hover, :focus) {
   border: 1px solid var(--accent-site-color);
+  outline: none;
 }
-
-.our-client-item:hover .our-client-logo {
+.our-client-link:is(:hover, :focus) .our-client-logo {
   fill: var(--accent-site-color);
 }
 
 /* --------Footer-------- */
-
+.footer-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 70px;
+}
 .footer {
   background-color: var(--darck-background-color);
   padding-top: 60px;
@@ -426,16 +419,7 @@ img {
   display: inline-flex;
 }
 
-.address-list {
-  margin-right: 70px;
-}
-
-.address-reset {
-  cursor: auto;
-}
-
-.address .items:hover,
-.address .items:focus {
+.address .items:is(:hover, :focus) {
   color: var(--accent-site-color);
 }
 
@@ -466,24 +450,30 @@ img {
 .footer-social-wrapper {
   display: inline-block;
 }
-.social-icon-item > a {
-  height: 20px;
+.social-icon {
+  display: block;
 }
 
-.footer-social-wrapper .social-icon-item {
+.footer-social-icon-link {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: var(--footer-social-icon-bg);
-}
-
-.footer-social-wrapper .social-icon-item:hover .social-icon {
-  fill: var(--white-title-color);
-}
-.footer-social-wrapper .social-icon-item:hover {
-  fill: var(--white-title-color);
-  background-color: #2196f3;
 }
 
 .footer-social-wrapper .social-icon {
   fill: var(--white-title-color);
+}
+
+.footer-social-icon-link:is(:hover, :focus) {
+  fill: var(--white-title-color);
+  background-color: #2196f3;
+  outline: none;
 }
 
 /* ------------------------------------------ */
@@ -505,11 +495,11 @@ img {
   padding: 6px 22px;
 }
 
-.filter-bnt:hover,
-.filter-bnt:focus,
+.filter-bnt:is(:hover, :focus),
 .filter-bnt.current-filter {
   color: var(--white-btn-text-color);
   background-color: var(--accent-site-color);
+  outline: none;
 
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -550,23 +540,25 @@ img {
 }
 
 .portfolio-title {
-  padding-top: 20px;
   margin-bottom: 4px;
-  padding-left: 24px;
 }
 
-.portfolio-text {
-  padding-bottom: 20px;
-  padding-left: 24px;
+.portfolio-text-wrap {
+  padding: 20px 24px;
+
+  border: 1px solid #e5e5e5;
+  border-top: none;
 }
 
 .portfolio-item {
-  border: 1px solid #e5e5e5;
   flex-basis: calc((100% - 60px) / 3);
 }
 
-.portfolio-item:hover,
-.portfolio-item:focus {
+.portfolio-item-link {
+  display: block;
+}
+.portfolio-item-link:is(:hover, :focus) {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline: none;
 }
